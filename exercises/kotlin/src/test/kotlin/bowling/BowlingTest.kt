@@ -57,4 +57,24 @@ internal class BowlingTest {
             0,0, 0,0, 0,0, 0,0, 0,0)
         assertEquals(54, bowling.scoreGame(rolls))
     }
+
+    @Test
+    fun allStrikesTest() {
+        val rolls = arrayListOf(10, 10, 10, 10, 10,
+            10, 10, 10, 10, 10, 10, 10)
+        assertEquals(300, bowling.scoreGame(rolls))
+    }
+
+    @Test
+    fun nineStrikesAndASpare() {
+        val rolls = arrayListOf(10, 10, 10, 10, 10,
+            10, 10, 10, 10, 5, 5, 10)
+        assertEquals(275, bowling.scoreGame(rolls))
+    }
+
+    fun allSpares() {
+        val rolls = arrayListOf(5,5, 5,5, 5,5, 5,5, 5,5, 5,5,
+            5,5, 5,5, 5,5, 5,5, 5,5, 5,5, 5)
+        assertEquals(150, bowling.scoreGame(rolls))
+    }
 }
