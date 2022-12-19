@@ -1,12 +1,20 @@
 internal class Bowling {
-    fun addRolls(rolls: ArrayList<Int>): Int {
-        var totalScore = 0
-        val frames = rolls.chunked(2)
-        for (i in frames.indices) {
-            if (frames[i].sum() == 10) {
-                totalScore += frames[i+1][0]
+    var totalScore = 0
+
+    fun scoreGame(rolls: ArrayList<Int>): Int {
+        var rollIndex = 0
+        for (frame in 1..10 step 1) {
+            if (rolls[rollIndex] + rolls[rollIndex+1] == 10) {
+                totalScore += rolls[rollIndex] + rolls[rollIndex+1] + rolls[rollIndex+2]
+                rollIndex+=2
+            } else if (rolls[rollIndex] == 10) {
+                totalScore += rolls[rollIndex] + rolls[rollIndex+1] + rolls[rollIndex+2]
+                rollIndex+=1
             }
-            totalScore += frames[i].sum()
+            else {
+                totalScore += rolls[rollIndex] + rolls[rollIndex+1]
+                rollIndex+=2
+            }
         }
         return totalScore
     }
