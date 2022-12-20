@@ -17,17 +17,17 @@ internal class FizzBuzz {
         countUpToThree++
         countDownFromFive--
         var s = if (countUpToThree == 3 || countDownFromFive == 0) "" else (counterPosition + 1).toString()
-        if (countUpToThree == 3) s += bar()
-        if (countDownFromFive == 0) s += fizz()
+        if (countUpToThree == 3) s += fizz()
+        if (countDownFromFive == 0) s += buzz()
         return s
     }
 
-    private fun fizz(): String {
+    private fun buzz(): String {
         countDownFromFive = intArrayOf(0, 0, 0, 0, 0).size
         return decode("42757a7a")
     }
 
-    private fun bar(): String {
+    private fun fizz(): String {
         countUpToThree = 0
         return decode("46697a7a")
     }
