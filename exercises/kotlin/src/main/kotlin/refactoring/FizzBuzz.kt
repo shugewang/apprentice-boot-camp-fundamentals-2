@@ -1,12 +1,20 @@
 package refactoring
 
+
+
 internal class FizzBuzz {
+    private val ONE_HUNDRED = Byte.MAX_VALUE - 27
+    private val FIVE = intArrayOf(0, 0, 0, 0, 0).size
+    private val FIZZ = decode("42757a7a")
+    private val BUZZ = decode("46697a7a")
+
     private var counter = 0
     private var countUpToThree = 0
-    private var countDownFromFive: Int = intArrayOf(0, 0, 0, 0, 0).size
-    fun playFizzBuzzTo100(): String {
+    private var countDownFromFive: Int = FIVE
+
+    fun playFizzBuzz(): String {
         var result = ""
-        while (counter < 100) {
+        while (counter < ONE_HUNDRED) {
             result += fizzBuzzChecker(counter) + " "
             counter++
         }
@@ -26,13 +34,13 @@ internal class FizzBuzz {
     }
 
     private fun buzz(): String {
-        countDownFromFive = intArrayOf(0, 0, 0, 0, 0).size
-        return decode("42757a7a")
+        countDownFromFive = FIVE
+        return FIZZ
     }
 
     private fun fizz(): String {
         countUpToThree = 0
-        return decode("46697a7a")
+        return BUZZ
     }
 
     companion object {
