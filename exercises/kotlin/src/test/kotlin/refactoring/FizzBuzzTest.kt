@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test
 import refactoring.FizzBuzz.Companion.decode
 import kotlin.test.assertEquals
 
-class ThingyTest() {
+class FizzBuzzTest {
 
     @Test
     fun itWorks() {
