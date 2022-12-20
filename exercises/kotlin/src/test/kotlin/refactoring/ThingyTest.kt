@@ -1,7 +1,7 @@
 package refactoring
 
 import org.junit.jupiter.api.Test
-import refactoring.Thingy.Companion.decode
+import refactoring.FizzBuzz.Companion.decode
 import kotlin.test.assertEquals
 
 class ThingyTest() {
@@ -21,7 +21,7 @@ class ThingyTest() {
                         "7a7a2038322038332046697a7a2042757a7a2038362046697a7a2038382038392046697a7a42757a7a20" +
                         "39312039322046697a7a2039342042757a7a2046697a7a2039372039382046697a7a2042757a7a"
             ),
-            Thingy().doTheThing()
+            FizzBuzz().playFizzBuzzTo100()
         )
     }
 }
