@@ -5,21 +5,24 @@ internal class FizzBuzz {
     private var countUpToThree = 0
     private var countDownFromFive: Int = intArrayOf(0, 0, 0, 0, 0).size
     fun playFizzBuzzTo100(): String {
-        var s = ""
+        var result = ""
         while (counter < 100) {
-            s += fizzBuzzChecker(counter) + " "
+            result += fizzBuzzChecker(counter) + " "
             counter++
         }
-        return s.substring(0, s.length - 1)
+        return result.substring(0, result.length - 1)
     }
 
-    private fun fizzBuzzChecker(counterPosition: Int): String {
+    private fun fizzBuzzChecker(counterIndex: Int): String {
         countUpToThree++
         countDownFromFive--
-        var s = if (countUpToThree == 3 || countDownFromFive == 0) "" else (counterPosition + 1).toString()
-        if (countUpToThree == 3) s += fizz()
-        if (countDownFromFive == 0) s += buzz()
-        return s
+        val isFizz = countUpToThree == 3
+        val isBuzz = countDownFromFive == 0
+        val counterAsString = (counterIndex + 1).toString()
+        var result = if (isFizz || isBuzz) "" else counterAsString
+        if (isFizz) result += fizz()
+        if (isBuzz) result += buzz()
+        return result
     }
 
     private fun buzz(): String {
